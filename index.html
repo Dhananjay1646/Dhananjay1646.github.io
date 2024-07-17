@@ -19,11 +19,31 @@
             overflow: hidden;
         }
         header {
-            background: #333;
+            background: url('profile-header.jpg') no-repeat center center/cover;
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77aaff 3px solid;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+        }
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            margin-top: 20px;
+        }
+        header h1 {
+            margin: 10px 0;
+            font-size: 2.5em;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+            margin-top: 20px;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px;
         }
         header a {
             color: #fff;
@@ -31,34 +51,53 @@
             text-transform: uppercase;
             font-size: 16px;
         }
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        header li {
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
         .main-content {
             padding: 20px;
             background: #fff;
             margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        h1, h2 {
+        section {
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.3;
+            border-radius: 10px;
+            z-index: -1;
+        }
+        #about::before { background: url('background-about.jpg') no-repeat center center/cover; }
+        #skills::before { background: url('background-skills.jpg') no-repeat center center/cover; }
+        #experience::before { background: url('background-experience.jpg') no-repeat center center/cover; }
+        #education::before { background: url('background-education.jpg') no-repeat center center/cover; }
+        #awards::before { background: url('background-awards.jpg') no-repeat center center/cover; }
+        #projects::before { background: url('background-projects.jpg') no-repeat center center/cover; }
+        #languages::before { background: url('background-languages.jpg') no-repeat center center/cover; }
+        #interests::before { background: url('background-interests.jpg') no-repeat center center/cover; }
+        h2 {
             color: #333;
-        }
-        .skills, .experience, .education, .awards, .projects, .languages, .interests {
-            margin: 20px 0;
+            margin-bottom: 10px;
         }
         .skills ul, .experience ul, .education ul, .awards ul, .projects ul, .languages ul, .interests ul {
             list-style-type: none;
             padding: 0;
         }
         .skills ul li, .experience ul li, .education ul li, .awards ul li, .projects ul li, .languages ul li, .interests ul li {
-            background: #eee;
+            background: rgba(0, 0, 0, 0.5);
             margin: 5px 0;
             padding: 10px;
-            border-left: #77aaff 4px solid;
+            border-radius: 5px;
         }
         footer {
             background: #333;
@@ -71,19 +110,18 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Dhananjay D. Magdum</h1>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#awards">Honors & Awards</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#languages">Languages</a></li>
-                <li><a href="#interests">Interests</a></li>
-            </ul>
-        </div>
+        <img src="profile-picture.jpg" alt="Dhananjay D. Magdum">
+        <h1>Dhananjay D. Magdum</h1>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#awards">Honors & Awards</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#languages">Languages</a></li>
+            <li><a href="#interests">Interests</a></li>
+        </ul>
     </header>
     <div class="container">
         <div class="main-content">
@@ -159,32 +197,31 @@
                 <h2>Honors & Awards</h2>
                 <ul>
                     <li>
-                        <strong>Team Recognition</strong> (Issued by C4i4 Lab, May 2024)<br>
-                        Recognized for dedication to team effort, collaboration, and commitment.
+                        <strong>Team Recognition</strong> - C4i4 Lab, May 2024
                     </li>
                     <li>
-                        <strong>The Outstanding Performer - Model Factory</strong> (Issued by C4i4 Lab, Apr 2023)<br>
-                        Recognized for outstanding contribution to the Model Factory (iFactory) Project.
+                        <strong>The Outstanding Performer - Model Factory</strong> - C4i4 Lab, Apr 2023
                     </li>
                 </ul>
             </section>
             <section id="projects" class="projects">
                 <h2>Projects</h2>
                 <ul>
-                    <li><strong>QuikStep</strong>: Streamlined process workflows to enhance operational efficiency.</li>
-                    <li><strong>Project Management/Order Tracking</strong>: Improved project oversight and order fulfillment.</li>
-                    <li><strong>Fleet Management</strong>: Optimized logistics and transportation efficiency.</li>
-                    <li><strong>Predictive & Preventive Maintenance</strong>: Implemented predictive analytics and preventive maintenance routines.</li>
-                    <li><strong>Visitor Management</strong>: Enhanced visitor tracking and management.</li>
-                    <li><strong>Data Analysis and Visualization</strong>: Developed tools for data analysis and visualization (Sales Insight, Quality Dashboard, etc.).</li>
+                    <li>Spatially Varying Regularization for Microwave Imaging (IEEE Conference)</li>
+                    <li>QuikStep</li>
+                    <li>Project Management/Order Tracking</li>
+                    <li>Fleet Management</li>
+                    <li>Predictive & Preventive Maintenance</li>
+                    <li>Visitor Management</li>
+                    <li>Data Analysis and Visualization</li>
                 </ul>
             </section>
             <section id="languages" class="languages">
                 <h2>Languages</h2>
                 <ul>
-                    <li>English: Fluent</li>
-                    <li>Hindi: Fluent</li>
-                    <li>Marathi: Fluent</li>
+                    <li>English</li>
+                    <li>Marathi</li>
+                    <li>Hindi</li>
                 </ul>
             </section>
             <section id="interests" class="interests">
@@ -192,8 +229,9 @@
                 <ul>
                     <li>Microwave Imaging</li>
                     <li>Optimization</li>
-                    <li>AI and Computer Vision</li>
-                    <li>Technological Innovation in Industry 4.0</li>
+                    <li>Artificial Intelligence</li>
+                    <li>Biomedical Engineering</li>
+                    <li>Communication Technologies</li>
                 </ul>
             </section>
         </div>
