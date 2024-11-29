@@ -99,6 +99,25 @@
             padding: 10px;
             border-radius: 5px;
         }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .scroll-to-top:hover {
+            background-color: #555;
+            transform: scale(1.1);
+        }
         footer {
             background: #333;
             color: #fff;
@@ -242,6 +261,21 @@
     <footer>
         <p>&copy; 2024 Dhananjay D. Magdum. All Rights Reserved.</p>
     </footer>
-    <a href="#">Top of the page</a>
+    <script>
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.onscroll = function() {
+            if (document.documentElement.scrollTop > document.documentElement.scrollHeight * 0.1) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
